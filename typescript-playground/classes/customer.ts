@@ -15,11 +15,8 @@ export class Customer {
         role: 'admin'
     }
 
-    private id: number;
 
-    constructor(id: number) {
-        this.id = id;
-    }
+    constructor(private id: number) { }
 
     uselessMethod(user: User) {
         
