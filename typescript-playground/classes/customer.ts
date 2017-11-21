@@ -29,6 +29,7 @@ export class Customer {
     }
 
     calculateNumber(): number {
+        debugger;
         return this.id * 10;
     }
 
