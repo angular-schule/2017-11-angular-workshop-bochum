@@ -1,6 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const customer_1 = require("./customer");
-const c = new customer_1.Customer(5);
+const classes_1 = require("./classes");
+const classes_2 = require("./classes");
+const c = new classes_1.Customer(5);
 c.fooBar();
+let d = new classes_2.Dictionary();
+d.set('bochum', 44866);
+console.log(d.get('bochum'));
 //# sourceMappingURL=app.js.map

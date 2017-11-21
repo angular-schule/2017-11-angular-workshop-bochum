@@ -2,10 +2,19 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 class Customer {
     constructor(id) {
+        this.user = {
+            name: 'Klaus',
+            id: 4,
+            role: 'admin'
+        };
         this.id = id;
     }
+    uselessMethod(user) {
+        if (typeof user.id === 'string') {
+            user.id = parseInt(user.id, 10);
+        }
+    }
     calculateNumber() {
-        debugger;
         return this.id * 10;
     }
     fooBar() {
@@ -13,6 +22,7 @@ class Customer {
         let callback = function () {
             return self.calculateNumber();
         };
+        this.uselessMethod(this.user);
         let callback1 = () => this.calculateNumber();
         console.log(callback1());
         let city = 'Bochum-Wattenscheid';
