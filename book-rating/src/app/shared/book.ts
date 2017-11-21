@@ -5,8 +5,4 @@ export class Book {
     public description: string,
     public rating = 1
   ) {}
-
-  toString() {
-    return this.title + ': <b></b>' + this.description;
-  }
 }
