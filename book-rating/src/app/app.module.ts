@@ -6,13 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookComponent } from './book/book.component';
+import { ButtonComponent } from './button/button.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    BookComponent
+    BookComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
