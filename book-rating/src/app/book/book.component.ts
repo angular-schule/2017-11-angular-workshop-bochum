@@ -10,6 +10,7 @@ import { Book } from '../shared/book';
 export class BookComponent implements OnInit {
 
   @Input() book: Book;
+  @Input() index: number;
 
   constructor() { }
 

@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Book Rating';
+  url = 'https://angular.schule';
 
   constructor() {
     setTimeout(() => this.title = 'my cool Book Rating', 2000);
