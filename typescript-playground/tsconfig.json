@@ -4,7 +4,9 @@
         "target": "es2015",
         "noImplicitAny": true,
         "sourceMap": true,
-        "noEmitOnError": true
+        "noEmitOnError": true,
+        "declaration": true,
+        "outDir": "./out-tsc"
     },
     "exclude": [
         "node_modules"
