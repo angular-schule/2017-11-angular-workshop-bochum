@@ -20,4 +20,12 @@ export class BookComponent implements OnInit {
     return new Array(this.book.rating);
   }
 
+  rateUp() {
+    this.book.rateUp();
+  }
+
+  rateDown() {
+    this.book.rateDown();
+  }
+
 }

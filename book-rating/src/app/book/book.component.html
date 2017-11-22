@@ -10,10 +10,14 @@
       </h2>
     </div>
 
+    <span *ngFor="let x of getStarArray()">⭐️</span>
+
     <p>
       {{ book.description }}
     </p>
 
-    <span *ngFor="let x of getStarArray()">⭐️</span>
+    <button class="btn btn-secondary" (click)="rateUp()"> +1 </button>
+    <button class="btn btn-secondary" (click)="rateDown()"> -1 </button>
+
   </div>
 </div>
