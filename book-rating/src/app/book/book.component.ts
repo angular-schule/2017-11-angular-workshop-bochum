@@ -13,7 +13,6 @@ export class BookComponent implements OnInit {
   @Input() index: number;
 
   @Output() rated = new EventEmitter<Book>();
-  @Output() closed = new EventEmitter<Book>();
 
   constructor() { }
 
