@@ -7,11 +7,15 @@ export class Book {
   ) {}
 
   rateUp() {
-    this.rating++;
+    if (this.rating < 5) {
+      this.rating++;
+    }
   }
 
   rateDown() {
-    this.rating--;
+    if (this.rating > 1) {
+      this.rating--;
+    }
   }
 
 }
