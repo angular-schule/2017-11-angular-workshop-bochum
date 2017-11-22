@@ -9,20 +9,12 @@ describe('BookComponent (simple)', () => {
   });
 
   it('rateUp should forward call to Book model', () => {
-    let ratingWasCalled = false;
-
-    comp.book = {
-      isbn: '',
-      title: '',
-      description: '',
-      rating: 1,
-      rateUp: () => { ratingWasCalled = true; },
-      rateDown: () => {}
-    };
+    comp.book = { rateUp: () => {} } as Book;
+    spyOn(comp.book, 'rateUp');
 
     comp.rateUp();
 
-    expect(ratingWasCalled).toBe(true);
+    expect(comp.book.rateUp).toHaveBeenCalled();
   });
 
   it('rating should emit event', () => {
