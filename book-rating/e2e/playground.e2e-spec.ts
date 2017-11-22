@@ -1,6 +1,6 @@
 import { browser, $ } from 'protractor';
 
-fdescribe('E2E Playground', () => {
+describe('E2E Playground', () => {
 
   beforeAll(() => browser.waitForAngularEnabled(false));
 
