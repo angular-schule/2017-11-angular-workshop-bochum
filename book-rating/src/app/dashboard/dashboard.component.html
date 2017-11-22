@@ -4,6 +4,14 @@
   [index]="i"
   (rated)="reorderBooks($event)"></br-book>
 
+
+<h4>Bücher als JSON:</h4>
+<pre>
+{{ books | json }}
+</pre>
+
+
+
 <!--
 <div *ngFor="let b of books; index as i">
   {{ i + 1 }}.) {{ b.title }}
