@@ -5,7 +5,7 @@
     </div>
     <div class="card-title">
       <h2>
-        {{ index + 1 }}.)  {{ book.title }}
+        {{ index + 1 }}.) {{ book.title }}
         <span class="badge badge-warning">{{ book.rating }}</span>
       </h2>
     </div>
@@ -16,7 +16,7 @@
       {{ book.description }}
     </p>
 
-    <button class="btn btn-secondary fa fa-thumbs-up" (click)="rateUp()"></button>
+    <button class="btn btn-secondary fa fa-thumbs-up rate-up-btn" (click)="rateUp()"></button>
     <button class="btn btn-secondary fa fa-thumbs-down" (click)="rateDown()"></button>
 
   </div>
