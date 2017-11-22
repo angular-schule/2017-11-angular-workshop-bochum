@@ -46,9 +46,6 @@
 
 
 
-
-
-
 <br-book *ngFor="let b of books; index as i" [book]="b" [index]="i" (rated)="reorderBooks($event)"></br-book>
 
 
@@ -57,6 +54,12 @@
 {{ books | json }}
 </pre>
 
+
+<hr>
+
+<span class="date-box">
+  {{ d | date:'fullDate' }}
+</span>
 
 
 <!--
