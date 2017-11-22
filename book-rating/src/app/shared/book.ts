@@ -5,4 +5,13 @@ export class Book {
     public description: string,
     public rating = 1
   ) {}
+
+  rateUp() {
+    this.rating++;
+  }
+
+  rateDown() {
+    this.rating--;
+  }
+
 }
