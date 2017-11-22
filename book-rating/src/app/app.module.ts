@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookComponent } from './book/book.component';
 import { ButtonComponent } from './button/button.component';
+import { CreateBookComponent } from './create-book/create-book.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ButtonComponent } from './button/button.component';
     AppComponent,
     DashboardComponent,
     BookComponent,
-    ButtonComponent
+    ButtonComponent,
+    CreateBookComponent
   ],
   imports: [
     BrowserModule,
