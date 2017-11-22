@@ -20,4 +20,8 @@ export class DashboardComponent implements OnInit {
     ];
   }
 
+  reorderBooks(book: Book) {
+    this.books.sort((a, b) => b.rating - a.rating);
+  }
+
 }

@@ -1,4 +1,8 @@
-<br-book *ngFor="let b of books; index as i" [book]="b" [index]="i"></br-book>
+<br-book
+  *ngFor="let b of books; index as i"
+  [book]="b"
+  [index]="i"
+  (rated)="reorderBooks($event)"></br-book>
 
 <!--
 <div *ngFor="let b of books; index as i">

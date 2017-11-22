@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { Book } from '../shared/book';
 
@@ -12,6 +12,9 @@ export class BookComponent implements OnInit {
   @Input() book: Book;
   @Input() index: number;
 
+  @Output() rated = new EventEmitter<Book>();
+  @Output() closed = new EventEmitter<Book>();
+
   constructor() { }
 
   ngOnInit() {}
@@ -22,10 +25,12 @@ export class BookComponent implements OnInit {
 
   rateUp() {
     this.book.rateUp();
+    this.rated.emit(this.book);
   }
 
   rateDown() {
     this.book.rateDown();
+    this.rated.emit(this.book);
   }
 
 }
