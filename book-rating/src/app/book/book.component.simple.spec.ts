@@ -18,7 +18,23 @@ describe('BookComponent (simple)', () => {
   });
 
   it('rating should emit event', () => {
+    comp.book = {
+      isbn: '000',
+      title: 'Buch',
+      rateUp: () => {}
+    } as Book;
 
+    const cbobj = {
+      callback: b => {
+        expect(b).toBe(comp.book);
+      }
+    };
+    spyOn(cbobj, 'callback');
+
+    comp.rated.subscribe(cbobj.callback);
+
+    comp.rateUp();
+    expect(cbobj.callback).toHaveBeenCalled();
   });
 
 
