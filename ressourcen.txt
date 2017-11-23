@@ -1,5 +1,8 @@
+https://blog.mariusschulz.com/
 https://blog.thoughtram.io/
 https://angular.io/guide/testing
 https://github.com/juristr/angular-testing-recipes
 https://toddmotto.com/building-tesla-range-calculator-angular-2-reactive-forms
 http://rxmarbles.com/
+https://leanpub.com/router
+http://angular.io/resources
