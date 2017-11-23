@@ -1,0 +1,48 @@
+<div class="card mb-4">
+  <div class="card-body bg-light">
+    <div class="card-title">
+      <h3>
+        <i class="fa fa-book" aria-hidden="true"></i>
+        Buch hinzufügen (TDF)
+      </h3>
+    </div>
+
+    <form (ngSubmit)="add()">
+      <div class="form-group">
+        <label for="isbn">
+          <i class="fa fa-barcode" aria-hidden="true"></i>
+          ISBN
+        </label>
+        <input class="form-control" name="isbn" type="text" [(ngModel)]="book.isbn">
+      </div>
+
+      <div class="form-group">
+        <label for="title">
+          <i class="fa fa-info-circle" aria-hidden="true"></i>
+          Titel
+        </label>
+        <input class="form-control" name="title" type="text" [(ngModel)]="book.title">
+      </div>
+
+      <div class="form-group">
+        <label for="description">
+          <i class="fa fa-align-left" aria-hidden="true"></i>
+          Beschreibung
+        </label>
+        <textarea class="form-control" name="description" [(ngModel)]="book.description"></textarea>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-success">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+          Hinzufügen
+        </button>
+      </div>
+
+    </form>
+
+    <strong>DEBUG:</strong>
+    <pre>{{ book | json }}</pre>
+
+  </div>
+</div>
