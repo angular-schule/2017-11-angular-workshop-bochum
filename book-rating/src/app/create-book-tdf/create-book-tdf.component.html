@@ -7,21 +7,42 @@
       </h3>
     </div>
 
-    <form (ngSubmit)="add()">
+    <form (ngSubmit)="add()" #form="ngForm">
       <div class="form-group">
         <label for="isbn">
           <i class="fa fa-barcode" aria-hidden="true"></i>
           ISBN
         </label>
-        <input class="form-control" name="isbn" type="text" [(ngModel)]="book.isbn">
+        <input class="form-control" name="isbn" type="text"
+          [(ngModel)]="book.isbn"
+          required
+          minlength="10"
+          maxlength="13"
+          #isbn="ngModel">
+
+        <div *ngIf="isbn.dirty && isbn.invalid" class="alert alert-danger mt-2">
+          Die ISBN muss angegeben werden.
+        </div>
+
+        <pre>{{ isbn.errors | json }}</pre>
+
       </div>
+
 
       <div class="form-group">
         <label for="title">
           <i class="fa fa-info-circle" aria-hidden="true"></i>
           Titel
         </label>
-        <input class="form-control" name="title" type="text" [(ngModel)]="book.title">
+        <input class="form-control" name="title" type="text"
+          [(ngModel)]="book.title"
+          required
+          #title="ngModel">
+
+        <div *ngIf="title.dirty && title.invalid" class="alert alert-danger mt-2">
+          Der Titel muss angegeben werden.
+        </div>
+
       </div>
 
       <div class="form-group">
@@ -33,7 +54,7 @@
       </div>
 
       <div class="form-group">
-        <button type="submit" class="btn btn-success">
+        <button type="submit" class="btn btn-success" [disabled]="form.invalid">
           <i class="fa fa-plus" aria-hidden="true"></i>
           Hinzufügen
         </button>
