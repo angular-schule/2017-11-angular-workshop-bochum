@@ -1,0 +1,64 @@
+<div class="card mb-4">
+    <div class="card-body bg-light">
+      <div class="card-title">
+        <h3>
+          <i class="fa fa-book" aria-hidden="true"></i>
+          Buch hinzufügen (RF)
+        </h3>
+      </div>
+
+      <form (ngSubmit)="add()" [formGroup]="bookForm">
+        <div class="form-group">
+          <label for="isbn">
+            <i class="fa fa-barcode" aria-hidden="true"></i>
+            ISBN
+          </label>
+          <input class="form-control" name="isbn" type="text"
+            formControlName="isbn">
+
+          <div *ngIf="bookForm.get('isbn').dirty && bookForm.get('isbn').invalid" class="alert alert-danger mt-2">
+            Die ISBN muss angegeben werden.
+          </div>
+
+        </div>
+
+
+        <div class="form-group">
+          <label for="title">
+            <i class="fa fa-info-circle" aria-hidden="true"></i>
+            Titel
+          </label>
+          <input class="form-control" name="title" type="text"
+            formControlName="title">
+
+          <div *ngIf="bookForm.get('title').dirty && bookForm.get('title').invalid" class="alert alert-danger mt-2">
+            Der Titel muss angegeben werden.
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <label for="description">
+            <i class="fa fa-align-left" aria-hidden="true"></i>
+            Beschreibung
+          </label>
+          <textarea
+            class="form-control"
+            name="description"
+            formControlName="description"></textarea>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" [disabled]="bookForm.invalid">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            Hinzufügen
+          </button>
+        </div>
+
+      </form>
+
+      <strong>DEBUG:</strong>
+      <pre>{{ bookForm.value | json }}</pre>
+
+    </div>
+  </div>

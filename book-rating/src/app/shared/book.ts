@@ -3,6 +3,10 @@ export class Book {
     return new Book('', '', '');
   }
 
+  static fromRaw(obj: any) {
+    return new Book(obj.isbn, obj.title, obj.description, obj.rating);
+  }
+
   constructor(
     public isbn: string,
     public title: string,

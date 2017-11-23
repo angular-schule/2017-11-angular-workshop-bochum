@@ -1,3 +1,4 @@
 https://blog.thoughtram.io/
 https://angular.io/guide/testing
 https://github.com/juristr/angular-testing-recipes
+https://toddmotto.com/building-tesla-range-calculator-angular-2-reactive-forms
