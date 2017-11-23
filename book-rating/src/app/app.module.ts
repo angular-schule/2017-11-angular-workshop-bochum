@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { BookStoreService } from './shared/book-store.service';
 import { registerLocaleData } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
@@ -30,7 +31,8 @@ import { RxjsPlaygroundComponent } from './rxjs-playground/rxjs-playground.compo
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     BookStoreService,

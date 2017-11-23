@@ -17,10 +17,13 @@ export class DashboardComponent implements OnInit {
   constructor(private bs: BookStoreService) {}
 
   ngOnInit() {
-    this.books = this.bs.getAllStatic();
+    this.bs.getAll().subscribe(books => {
+      this.books = books;
+      this.reorderBooks();
+    });
   }
 
-  reorderBooks(book: Book) {
+  reorderBooks() {
     this.books.sort((a, b) => b.rating - a.rating);
   }
 
