@@ -2,3 +2,15 @@
 
 <button class="btn btn-primary" (click)="sendRandomValue()">Send random value</button>
 <button class="btn btn-primary" (click)="sendValue(42)">Send 42</button>
+
+<pre>
+  {{ subject$ | async }}
+</pre>
+
+<hr>
+
+<button class="btn btn-secondary" (click)="addTimerElement()">Add timer</button>
+
+<div *ngFor="let t of timers">
+  {{ interval$ | async }}
+</div>

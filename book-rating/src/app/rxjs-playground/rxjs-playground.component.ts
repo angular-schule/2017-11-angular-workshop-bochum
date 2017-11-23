@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { debounceTime, delay, distinctUntilChanged, filter, map, takeWhile } from 'rxjs/operators';
+import 'rxjs/add/observable/interval';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'br-rxjs-playground',
@@ -9,14 +11,16 @@ import { debounceTime, delay, distinctUntilChanged, filter, map, takeWhile } fro
 })
 export class RxjsPlaygroundComponent implements OnInit {
 
-  subject = new Subject<number>();
+  subject$ = new Subject<number>();
+  interval$ = Observable.interval(1000);
+  timers: any[] = [];
 
   constructor() { }
 
   ngOnInit() {
-    this.subject.subscribe(e => console.log('Subject:', e));
+    this.subject$.subscribe(e => console.log('Subject:', e));
 
-    this.subject.pipe(
+    this.subject$.pipe(
       // map(e => e * 10),
       // filter(e => e % 2 === 0),
       // debounceTime(500),
@@ -31,15 +35,20 @@ export class RxjsPlaygroundComponent implements OnInit {
     );
 
 
+
   }
 
   sendRandomValue() {
     const random = Math.floor(Math.random() * 100);
-    this.subject.next(random);
+    this.subject$.next(random);
   }
 
   sendValue(val: number) {
-    this.subject.next(val);
+    this.subject$.next(val);
+  }
+
+  addTimerElement() {
+    this.timers.push('');
   }
 
 }
