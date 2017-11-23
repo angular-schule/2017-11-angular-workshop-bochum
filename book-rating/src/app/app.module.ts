@@ -1,3 +1,4 @@
+import { BookStoreService } from './shared/book-store.service';
 import { registerLocaleData } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID, NgModule } from '@angular/core';
@@ -30,6 +31,7 @@ import { CreateBookRfComponent } from './create-book-rf/create-book-rf.component
     ReactiveFormsModule
   ],
   providers: [
+    BookStoreService,
     { provide: LOCALE_ID, useValue: 'de' }
   ],
   bootstrap: [AppComponent]
