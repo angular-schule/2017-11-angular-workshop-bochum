@@ -1,5 +1,5 @@
 import { BookResponse } from './book-response';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -8,6 +8,8 @@ import { map } from 'rxjs/operators';
 
 @Injectable()
 export class BookStoreService {
+
+  private apiUrl = 'http://api.angular.schule';
 
   constructor(private http: HttpClient) { }
 
@@ -20,9 +22,16 @@ export class BookStoreService {
   }
 
   getAll(): Observable<Book[]> {
-    return this.http.get<BookResponse[]>('http://api.angular.schule/books').pipe(
+    return this.http.get<BookResponse[]>(`${this.apiUrl}/books`).pipe(
       map(rawBooks => rawBooks.map(rawBook => Book.fromRaw(rawBook)))
     );
   }
+
+  getSingle(isbn: string): Observable<Book> {
+    return this.http.get<BookResponse>(`${this.apiUrl}/book/${isbn}`).pipe(
+      map(rawBook => Book.fromRaw(rawBook))
+    );
+  }
+
 
 }
