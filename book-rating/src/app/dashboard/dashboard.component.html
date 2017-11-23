@@ -1,3 +1,5 @@
+<br-rxjs-playground></br-rxjs-playground>
+
 <br-create-book-rf (bookCreated)="addBook($event)"></br-create-book-rf>
 
 <br-book *ngFor="let b of books; index as i" [book]="b" [index]="i" (rated)="reorderBooks($event)"></br-book>
