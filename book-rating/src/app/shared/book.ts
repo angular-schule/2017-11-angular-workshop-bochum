@@ -1,9 +1,10 @@
+import { BookResponse } from './book-response';
 export class Book {
   static empty(): Book {
     return new Book('', '', '');
   }
 
-  static fromRaw(obj: any) {
+  static fromRaw(obj: BookResponse) {
     return new Book(obj.isbn, obj.title, obj.description, obj.rating);
   }
 
